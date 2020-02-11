@@ -3,10 +3,11 @@
 using namespace std;
 int main()
 {
-    //freopen("./data/in.txt","r",stdin);
+    freopen("../data/in.txt","r",stdin);
     int n;
     int time=0;
     cin>>n;
+    
     while(n!=1){
         time++;
         if(n%2==0)n=n/2;
