@@ -3,10 +3,9 @@
  
 using namespace std;
  
-bool cmp( int a,int b ){//compare方法，用于控制sort方法的排序方式（从大到小）
+bool cmp( int a,int b ){
     return a>b;
 }
- 
 int main()
 {
     int n;
@@ -25,7 +24,7 @@ int main()
             else{
                 b=( 3*b+1 )/2;
             }
- 
+            
             for( int j=0;j<n;++j ){//检测数组其他项，可以覆盖就将其设为1（免于while循环）
                 if( j!=i && a[j]==b ){
                     a[j]=1;

@@ -9,11 +9,13 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		cin >> s;
 		map<char, int> m;
+
 		for (int j = 0; j < s.size(); j++) {
 			m[s[j]]++;
 			if (s[j] == 'P') p = j;
 			if (s[j] == 'T') t = j;
 		}
+		//这一步是关键，
 		if (m['P'] == 1 && m['A'] != 0 && m['T'] == 1 && m.size() == 3 && p * (t - p - 1) == s.length() - t - 1)
 			printf("YES\n");
 		else
