@@ -1,22 +1,18 @@
-/*
- * 部分正确
- */
 #include<iostream>
 #include<string>
 #include<cstring>
 using namespace std;
+
 int main(){
-    string pingyin[10]={"ling","yi","er","san","si","wu","liu","qi","ba","qiu"};
+    string pingyin[10]={"ling","yi","er","san","si","wu","liu","qi","ba","jiu"};
     string m;
     cin>>m;
     int sum=0;
+
     for(int i=0;i<m.size();i++){
         sum+=m[i]-'0';
     }
-    //char str[10];
-    //sprintf(str,"%d",sum);
     m=to_string(sum);
-    //cout<<m<<endl;
     for(int i=0;i<m.size();i++){
         int j=m[i]-'0';
         if(i==0){

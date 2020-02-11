@@ -4,8 +4,7 @@ using namespace std;
 int main()
 {
     //freopen("../data/in.txt","r",stdin);
-    int n;
-    int time=0;
+    int n,time=0;
     cin>>n;
     
     while(n!=1){
