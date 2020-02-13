@@ -9,12 +9,10 @@
 #include<algorithm>
 #include<string>
 using namespace std;
+
 bool comp(char m, char n)
 {
-    if (m > n)
-        return true;
-    else
-        return false;
+    return m > n;
 }
 
 int main()
@@ -22,8 +20,8 @@ int main()
     string a, b, c;
     cin >> c;
     //为不足4位的数补0
-    c.insert(0, 4 - c.length(), '0');
-
+    c.insert(0, 4 - c.length(), '0');  //s.insert(p,b,e):
+    
     while (true)
     {
         a = c;
@@ -32,6 +30,7 @@ int main()
         sort(a.begin(), a.end(), comp);
         //顺序排序
         sort(b.begin(), b.end());
+        
         //自动改变其类型
         int x = stoi(a);
         int y = stoi(b);
