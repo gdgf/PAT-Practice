@@ -9,10 +9,13 @@
 #include<cstring>
 using namespace std;
 const int LEN=100000;
+
 int main(){
     char A[LEN],B[LEN];
     char  pa,pb;
+
     cin>>A>>pa>>B>>pb;
+
     int x1=0,x2=0;
     //pa的个数
     for(int i=0;i<strlen(A);i++){
@@ -28,6 +31,8 @@ int main(){
     int a=pa-'0';
     int b=pb-'0';
     int sum1=0,sum2=0;
+    
+    //x1个a构成的数的值
     for(int i=0;i<x1;i++){
        sum1=sum1+a;
        a=a*10;
@@ -37,7 +42,6 @@ int main(){
        b=b*10;
     }
     cout<<sum1+sum2<<endl;
-//  cout<<A<<strlen(A)<<endl;
-//  cout<<B<<strlen(B)<<endl;
+    system("pause");
     return 0;
 }

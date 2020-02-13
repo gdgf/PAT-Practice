@@ -14,18 +14,18 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
+
 int cmp(char a,char b){
     //赢
-   if(a=='C'&&b=='J')return 1;
-   if(a=='J'&&b=='B')return 1;
-   if(a=='B'&&b=='C')return 1;
+   if((a=='C'&& b=='J')||(a=='J'&& b=='B')||(a=='B'&& b=='C'))
+        return 1;
    //平局
-   if(a=='C'&&b=='C')return 0;
-   if(a=='J'&&b=='J')return 0;
-   if(a=='B'&&b=='B')return 0;
+   if((a=='C'&& b=='C')||(a=='J'&& b=='J')||(a=='B'&& b=='B'))
+        return 2;
    //输
-   return -1;
+   return 3;
 }
+
 int main(){
 
     int n;
@@ -33,11 +33,13 @@ int main(){
     int a1=0,b1=0,c1=0;
     int a2=0,b2=0,c2=0;
     char xa[100001][2];
-    int m1[3]={0},m2[3]={0};
-    
+    int m1[3]={0},m2[3]={0};  //统计各自胜局中每个字母出现的次数
+
+
     //统计各自的胜场、平、输的次数
     //统计获胜次数最多的字母
     for(int i=0;i<n;i++){
+        
         cin>>xa[i][0]>>xa[i][1];
         int temp=cmp(xa[i][0],xa[i][1]);
         if(temp==1){
@@ -48,12 +50,12 @@ int main(){
             }else if(xa[i][0]=='F'){
                 m1[2]++;
             }
-            a1++;
-            c2++;
-        }else if(temp==0){
-            b1++;
-            b2++;
-        }else{
+            a1++;    //甲胜
+            c2++;    //乙输
+        }else if(temp==2){
+            b1++;    
+            b2++;    
+        }else if(temp==3){     //甲输乙胜
             if(xa[i][1]=='B'){
                 m2[0]++;
             }else if(xa[i][1]=='C'){
@@ -67,30 +69,25 @@ int main(){
     }
     cout<<a1<<" "<<b1<<" "<<c1<<endl;
     cout<<a2<<" "<<b2<<" "<<c2<<endl;
-   
-   // cout<<m1[0]<<" "<<m1[1]<<" "<<m1[2]<<endl;
-    //cout<<m2[0]<<" "<<m2[1]<<" "<<m2[2]<<endl;
-    char maxa,maxb;
-   
-    if(m1[0]>=m1[1]){
-        maxa='B';
-    }else{
-       maxa='C';
-       m1[0]=m1[1];
-    }
-    if(m1[0]<m1[2]){
-        maxa='F';
-    }
 
-    if(m2[0]>=m2[1]){
-        maxb='B';
-    }else{
-       maxb='C';
-       m2[0]=m2[1];
+
+    char Q[3]={'B','C','F'};
+    int max=0,s1=0,s2=0;
+    for(int i=0;i<3;i++){
+        if(m1[i]>max){
+            max=m1[i];
+            s1=i;
+        }
     }
-    if(m2[0]<m2[2]){
-        maxb='F';
+    for(int i=0;i<3;i++){
+        if(m2[i]>max){
+            max=m2[i];
+            s2=i;
+        }
     }
-    cout<<maxa<<" "<<maxb<<endl;
+    cout<<Q[s1]<<" "<<Q[s2]<<endl;
+
+    system("pause");
+
     return 0;
 }

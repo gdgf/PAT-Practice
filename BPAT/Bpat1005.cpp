@@ -14,7 +14,6 @@ int main()
     for( int i=0;i<n;++i ){
         cin>>a[i];
     }
- 
     for( int i=0;i<n;++i ){
         int b=a[i];
         while( b!=1 ){
@@ -24,8 +23,10 @@ int main()
             else{
                 b=( 3*b+1 )/2;
             }
-            
-            for( int j=0;j<n;++j ){//检测数组其他项，可以覆盖就将其设为1（免于while循环）
+
+            for( int j=0;j<n;++j ){
+
+                //检测数组其他项,这个b如果出现过，就将其覆盖为1.
                 if( j!=i && a[j]==b ){
                     a[j]=1;
                 }
@@ -40,14 +41,12 @@ int main()
             c[l++]=a[i];
         }
     }
- 
     //对关键数数组进行排序
     sort(c,c+l,cmp);//排序范围：c[0]~c[l-1]，排序方式：cmp方法
- 
     cout<<c[0];
     for( int q=1;q<l;++q ){
         cout<<" "<<c[q];
     }
- 
+    system("pause");
     return 0;
 }

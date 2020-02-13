@@ -1,7 +1,7 @@
 /*
- 数组原地移动技术
- 将有n个元素的数组的后m个数依次移动到前面
-*/
+ * 在不新建数组的情况下，对数组进行移位。
+ * 如果移动m位，一次移动1位，移动m次。
+ */
 #include <iostream>
 using namespace std;
 int main()
@@ -12,6 +12,8 @@ int main()
    for(int i=0;i<n;i++){
        cin>>array[i];
    }
+
+    //这一步是关键
    for(int i=0;i<m;i++){
        int t=array[n-1];
        for(int j=n-2;j>=0;j--){
@@ -19,6 +21,8 @@ int main()
        }
        array[0]=t;
    }
+   
+   //输出
    for(int i=0;i<n;i++){
        if(i==0){
            cout<<array[i];

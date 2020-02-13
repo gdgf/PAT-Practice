@@ -1,19 +1,22 @@
-
-    /*
-    * 分数总和大的返回真，小于返回假。共三种情况
-    * 分数相同：
-    *   德分高，返回真
-    *   德分相同，id大返回真
-    *        
-    */
+/*
+* 分数总和大的返回真，小于返回假。共三种情况
+* 分数相同：
+*   德分高，返回真
+*   德分相同，id大返回真
+*        
+*/
+#include<iostream>
+#include<algorithm>
 #include<cstdio>
 #include<cstdlib>
 #include<cstring>
-#include<bits/stdc++.h>
-typedef struct{
+using namespace std;
+
+struct student{
     char id[50];
     int score1,score2,sum;
-}student;
+};
+
 bool cmp(student a,student b){
     if(a.sum >b.sum)
         return true;
@@ -29,6 +32,7 @@ bool cmp(student a,student b){
         return false;
     return false;
 }
+
 int main()
 {
     int size,min,max;
@@ -69,10 +73,10 @@ int main()
             }
         }
     }
-    std::sort(best,best+bestsize,cmp);
-    std::sort(second,second+secondsize,cmp);
-    std::sort(less,less+lesssize,cmp);
-    std::sort(lessess,lessess+lessesssize,cmp);
+    sort(best,best+bestsize,cmp);
+    sort(second,second+secondsize,cmp);
+    sort(less,less+lesssize,cmp);
+    sort(lessess,lessess+lessesssize,cmp);
     printf("%d\n",bestsize+secondsize+lesssize+lessesssize);
     for(int i=0;i<bestsize;i++)
         printf("%s %d %d\n",best[i].id,best[i].score1,best[i].score2);
