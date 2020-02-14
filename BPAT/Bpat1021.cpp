@@ -48,6 +48,7 @@ int main(){
         }
 
     }
+    //这里是天然的升序输入
     for(int i=0;i<10;i++){
         if(num[i]!=0){
             cout<<i<<":"<<num[i]<<endl;
@@ -55,5 +56,6 @@ int main(){
             continue;
         }
     }
+    system("pause");
     return 0;
 }

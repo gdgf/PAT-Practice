@@ -1,44 +1,51 @@
 #include<iostream>
 #include<string>
+#include<sstream>
 using namespace std;
+
 int main(){
     string x;
     cin>>x;
+
     int j,k;
     char zhegnfu1,zhegnfu2;
-    char xm[1000],xm1[1000];
+    string xm1,xm2;
+    
     for(int i=0;i<x.size();i++){
         zhegnfu1=x[0];
         if(x[i]=='E'){
-            j=i;
+            j=i;  //记录E的位置
             zhegnfu2=x[i+1];
             break;
         }
     }
+    int n1=0,n2=0;
     for(int i=1;i<=j-1;i++){
-        xm[i-1]=x[i];
-        cout<<xm[i-1]<<endl;
+        xm1[i-1]=x[i];
+        n1++;
     }
     for(int i=j+2;i<x.size();i++){
-        xm1[i-j-2]=x[i];
-        cout<<xm1[i-j-2]<<endl;
+        xm2[i-j-2]=x[i];
+        n2++;
     }
+    cout<<zhegnfu1<<endl;
+    cout<<zhegnfu2<<endl;
 
-    double a=stod(xm);
-    cout<<"a"<<a<<endl;
-    int b=atoi(xm1);
-    for(int i=0;i<b;i++){
-        if(zhegnfu2=='+'){
-            a=a*10;
-        }else{
-            a=a/10;
-        }
-    }
-    string m=to_string(a);
-    if(zhegnfu1=='+'){
-        cout<<m<<endl;
-    }else{
-        cout<<zhegnfu1<<m;
-    }
+    /*
+    for(int i=0;i<n1;i++)
+        cout<<xm1[i];
+    cout<<endl;
+    for(int i=0;i<n2;i++)      
+        cout<<xm2[i];
+    cout<<endl;
+    */
+
+    double a;
+    int b;
+    istringstream iss(xm1);
+    iss >> a;
+    cout<<a<<endl;
+
+    system("pause");
     return 0;
 }

@@ -1,42 +1,34 @@
 /*
  * 组个最小数：
- * 将输入的数据组个最小数，0不能做首位
+ * 输入了每个数字的个数
  */
+
 #include<iostream>
 using namespace std;
 int main() {
-	char x[51];
-	int num[10] = { 0 };
-	int i = 0;
-	char c;
+	int number[10];
+    //统计出现的数字的个数
     for(int i=0;i<10;i++){
-        cin>>num[i];
+        cin>>number[i];
     }
-	int j;
-	for (j = 1; j < 10; j++) {
-		//cout << "num" << j<< ":" << num[j] << endl;
-		//输出一个除0以外的最小数
-		if (num[j]!=0) {
-			//cout << 10<<endl;
-			cout << j;
-			break;
-		}
-		//cout << j << endl;
-	}
-	for (int k = 0; k < 10; k++) {
-		if (k != j) {
-			//输出num[k]个K
-			for (int m = 0; m < num[k]; m++) {
-				cout << k;
-			}
-		}
-		else {
-			//j输出num[k]-1个即可
-			for (int m = 0; m < num[k] - 1; m++) {
-				cout << k;
-			}
-		}
-	}
-	//system("pause");
+    int m=0;
+    for(int i=1;i<10;i++){
+        if(number[i]!=0){ //找到第一个个数不为0的数字
+            m=i;
+            cout<<m;
+            break;
+        }
+    }
+    for(int i=0;i<10;i++){
+        if(i==m){
+            for(int j=0;j<number[i]-1;j++)
+               cout<<i;
+        }else{
+            for(int j=0;j<number[i];j++)
+                cout<<i;
+        }
+    }
+    cout<<endl;
+	system("pause");
 	return 0;
 }

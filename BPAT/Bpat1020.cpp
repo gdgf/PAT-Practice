@@ -38,6 +38,7 @@ int main(){
             cost+=cake[i].price;
         }            
     }
-    printf("%.2lf",cost);   
+    printf("%.2lf",cost); 
+    system("pause");  
     return 0;
 }

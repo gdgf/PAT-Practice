@@ -9,11 +9,12 @@ int main() {
     cin >>s;
     int i = 0;
     while (s[i] != 'E') i++; //找到E的位置
-    string t = s.substr(1, i-1);  //得到s的1到i-1的数据
-    int n = stoi(s.substr(i+1));  //得到s的i+1开始的所有数据,并进行数据类型转换
+
+    string t = s.substr(1, i-1);
+    int n = stoi(s.substr(i+1));  
     if (s[0] == '-') 
         cout << "-";
-
+    
     //因为原数是科学计数法表示，所以其值必然是x.XXX,所以如果小于0，则必然需要再前面加0,
     if (n < 0) {
         cout << "0.";

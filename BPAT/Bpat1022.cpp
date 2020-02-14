@@ -11,6 +11,7 @@ int main(){
     C=A+B;
     int s[111]; //保存每次的余数
     int i=0;
+    
     if(C==0){
         cout<<0;
     }else{
@@ -22,6 +23,6 @@ int main(){
     for(int j=i-1;j>=0;j--){  //反向输出
         cout<<s[j];
     }
-
+    system("pause");
     return 0;
 }
