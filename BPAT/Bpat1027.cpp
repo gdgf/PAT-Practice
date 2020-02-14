@@ -18,15 +18,13 @@ int main(){
              break;
         }
     }
-    //cout<<"x="<<x<<endl;
     int rest=n-sum;
     int l=0;
     int k=x;
     int k1=1;
-   // cout<<sum<<" "<<rest<<endl;
-   if(n<7){
-       cout<<c<<endl;
-   }
+    if(n<7){
+        cout<<c<<endl;
+    }
     for(int m=0;m<x;m++){
         if(m<x/2+1){
             l=m;
@@ -39,7 +37,6 @@ int main(){
             cout<<endl;
         }else{
             k1+=2;
-            //cout<<"k="<<k<<endl;
             l=x-m-1;
             for(int j=0;j<l;j++)
                 cout<<" ";

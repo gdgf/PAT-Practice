@@ -31,12 +31,14 @@ int getnum(int * list,int N){
 }
 
 int main(){
+
     cin>>N>>p;
     int list[N];
     for(int i=0;i<N;i++){
         cin>>list[i];
     }
     sort(list,list+N);
+    
     int num=getnum(list,N);
     cout<<num<<endl;
     return 0;
