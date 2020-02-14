@@ -12,7 +12,7 @@ int main(){
     for(int i=3;;i=i+2){
         if((sum+i*2)<=n){
             sum=sum+i*2;
-            x=i;  //行/列数
+            x=i;
         }
         else{
              break;
@@ -24,7 +24,6 @@ int main(){
     int k=x;
     int k1=1;
    // cout<<sum<<" "<<rest<<endl;
-   //太少时
    if(n<7){
        cout<<c<<endl;
    }
@@ -51,5 +50,7 @@ int main(){
         }
     }
     cout<<rest<<endl;
+    system("pause");
+    
     return 0;
 }
