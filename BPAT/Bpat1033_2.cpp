@@ -9,10 +9,12 @@ int main()
 {
     scanf("%s",b);
     int x=scanf("%s",s);
-    if(x!=1){printf("%s",b);return 0;}
+    if(x!=1){
+        printf("%s",b);
+        return 0;
+    }
     int k=-1;
-    while(b[++k])
-    {
+    while(b[++k]){
         bad[b[k]]=1;
     }
     k=-1;
