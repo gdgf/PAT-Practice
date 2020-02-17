@@ -1,5 +1,5 @@
 /* 
-这个题还有错误
+ 这个题还有错误
  想要在一个多重for循环中退出来，则可以把这一部分封成函数
  用return 退出。这里最后没有用到这种语法。
  */
@@ -17,8 +17,8 @@ int getnum(int * list,int N){
         for(int j=N-1;j>=0;j--){  //M移动的方向
             m=list[i];
             M=list[j];
-            if(i<j){
-                if(M<=m*p){   //从满足条件的里面找出最大的
+            if(i<=j){              //这里要注意，防止只有一个数的情况发生
+                if(M<=m*p){        //从满足条件的里面找出最大的
                     int k=j-i+1;
                     if(k>num){
                         num=k;
@@ -38,8 +38,9 @@ int main(){
         cin>>list[i];
     }
     sort(list,list+N);
-    
+
     int num=getnum(list,N);
     cout<<num<<endl;
+    system("pause");
     return 0;
 }
