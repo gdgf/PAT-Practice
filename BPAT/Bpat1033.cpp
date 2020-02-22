@@ -1,20 +1,24 @@
 /*
- 直接抄的
-*/
-
+ *  学习string的一种语法:查看string中是否含有某个字符。
+ *        example.find(x)!=string::npos 
+ */
 #include <iostream>
 #include <cctype>
 using namespace std;
 int main() {
   string bad, should;
-  getline(cin, bad);  //为了防止第一行是空的，不能用cin >> ,用getline(cin, ...)
+  getline(cin, bad);   
   getline(cin, should);
-  
+
+   //toupper()--参数小写变成大写，否则返回该参数
   for (int i = 0, length = should.length(); i < length; i++) {
-    if (bad.find(toupper(should[i])) != string::npos) 
-        continue;    //toupper()--参数小写变成大写，否则返回该参数
-    if (isupper(should[i]) && bad.find('+') != string::npos) continue;    //判断大写字母能不能输出
-    cout << should[i];
+      //如果should中的字母在bad中存在,肯定不能输出(注意要变为小写)
+      if (bad.find(toupper(should[i])) != string::npos)
+          continue;   
+      //对于要输出的大写字母，如果上档键坏了，那就无法输出。
+      if (isupper(should[i]) && bad.find('+') != string::npos) 
+          continue;    
+      cout << should[i];
   }
   return 0;
 }
